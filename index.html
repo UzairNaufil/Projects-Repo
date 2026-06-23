@@ -1,30 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Pakistan Tour Manager</title>
-    <!-- Connects the CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PakTour Manager - Tour Planner</title>
+    <!-- Connects the external CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Pakistan Tour Manager</h1>
-    <p>Welcome to our tour website. We plan trips to the most beautiful places in Pakistan.</p>
+    <!-- Header / Banner Section -->
+    <header>
+        <h1>PakTour Manager</h1>
+        <p>Your expert guides to exploring the landscapes of Pakistan</p>
+    </header>
 
-    <!-- Simple image with a standard width attribute -->
-    <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=600&q=80" alt="Hunza Valley" width="500">
+    <!-- Main Content Wrapper -->
+    <main>
+        
+        <!-- Welcome Section -->
+        <section class="intro">
+            <h2>Explore Our Destinations</h2>
+            <p>We handle transport, premium hotel bookings, and experienced local guides so you can relax and enjoy the journey.</p>
+        </section>
 
-    <h2>Our Popular Trips</h2>
-    <ul>
-        <li>Hunza Valley (7 Days)</li>
-        <li>Lahore History Tour (3 Days)</li>
-        <li>Naran Kaghan Trip (5 Days)</li>
-    </ul>
+        <!-- Destination Catalogue (CSS Grid Container) -->
+        <div class="card-grid">
+            
+            <!-- Card 1: The South -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1618213837497-d1a1040a32e1?auto=format&fit=crop&w=600&q=80" alt="Karachi Clifton Beach sunset" class="card-image">
+                <div class="card-content">
+                    <h3>The South: Karachi & Clifton Beach</h3>
+                    <p>Experience coastal breezes, colonial-era architecture, historic neighborhoods, and colorful beachside camel rides.</p>
+                </div>
+            </div>
 
-    <h2>Book a Tour</h2>
-    <p>If you want to plan your next holiday, visit the official Pakistan Tourism site to find out more:</p>
-    
-    <!-- Simple standard link -->
-    <a href="https://www.tourism.gov.pk">Click here to visit the Tourism Website</a>
+            <!-- Card 2: The Heritage -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1608756012431-15c03df4bdf2?auto=format&fit=crop&w=600&q=80" alt="Mohenjo-daro archaeological ruins" class="card-image">
+                <div class="card-content">
+                    <h3>The Heritage: Mohenjo-daro & Larkana</h3>
+                    <p>Travel back in time to explore the fascinating brick ruins and irrigation canals of the 5,000-year-old Indus Valley Civilization.</p>
+                </div>
+            </div>
+
+            <!-- Card 3: The Valleys -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=600&q=80" alt="Lush green Swat Valley landscape" class="card-image">
+                <div class="card-content">
+                    <h3>The Valleys: Swat Valley & Malam Jabba</h3>
+                    <p>Visit the region often called the "Switzerland of the East" for beautiful alpine forests, rivers, and winter skiing resorts.</p>
+                </div>
+            </div>
+
+            <!-- Card 4: The Desert -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1509316975850-ff9c5edd0cd9?auto=format&fit=crop&w=600&q=80" alt="Golden dunes of Cholistan desert" class="card-image">
+                <div class="card-content">
+                    <h3>The Desert: Cholistan & Tharparkar</h3>
+                    <p>Embark on desert safaris to discover ancient sand-fortresses, vibrant desert folklore, and rich local music traditions.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Booking Form Section -->
+        <section class="booking-section">
+            <h2>Plan Your Custom Journey</h2>
+            <p>Fill out the form below, and one of our travel managers will reach out to build your custom itinerary.</p>
+            
+            <!-- Formspree Integration. Be sure to replace YOUR_FORM_ID with your Formspree ID -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="booking-form">
+                
+                <!-- Name Field with Character Pattern Restriction -->
+                <div class="form-group">
+                    <label for="name">Your Full Name:</label>
+                    <input type="text" id="name" name="name" required 
+                           minlength="4" 
+                           pattern="[A-Za-z\s]+" 
+                           placeholder="e.g., Muhammad Ahmed">
+                    <span class="hint">Must be at least 4 letters. Numbers and symbols are blocked.</span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="e.g., ahmed@example.com">
+                </div>
+
+                <!-- Phone Field -->
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required 
+                           placeholder="e.g., 03001234567">
+                </div>
+
+                <!-- Message Field with Minimum Length Restriction -->
+                <div class="form-group">
+                    <label for="message">Trip Details / Message:</label>
+                    <textarea id="message" name="message" rows="5" required 
+                              minlength="15" 
+                              placeholder="Tell us about the destinations you want to visit and how many travelers will join..."></textarea>
+                    <span class="hint">Minimum of 15 characters required to help block spam.</span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-button">Submit Booking Request</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer>
+        <p>&copy; 2026 PakTour Manager. Developed for educational purposes.</p>
+    </footer>
 
 </body>
 </html>
